@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
+using Newtonsoft.Json.Serialization;
 
 namespace AngularAuth
 {
@@ -19,6 +21,9 @@ namespace AngularAuth
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var jsonFormatter = config.Formatters.JsonFormatter;
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }
