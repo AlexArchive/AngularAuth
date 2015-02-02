@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace AngularAuth.Authentication
+namespace AngularAuth
 {
     public class AuthenticationContext : IdentityDbContext<IdentityUser>
     {

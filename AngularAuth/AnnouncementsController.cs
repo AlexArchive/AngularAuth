@@ -1,7 +1,6 @@
 ﻿using System.Web.Http;
-using AngularAuth.Models;
 
-namespace AngularAuth.Controllers
+namespace AngularAuth
 {
     [RoutePrefix("api/Announcements")]
     public class AnnouncementsController : ApiController

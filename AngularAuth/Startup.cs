@@ -1,9 +1,9 @@
-﻿using System;
-using AngularAuth.Authentication;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
+using Newtonsoft.Json.Serialization;
 using Owin;
+using System;
 using System.Web.Http;
 
 [assembly: OwinStartup(typeof(AngularAuth.Startup))]
@@ -14,14 +14,32 @@ namespace AngularAuth
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureOAuth(app);
             var config = new HttpConfiguration();
-            WebApiConfig.Register(config);
+            ConfigureRoutes(config);
+            ConfigureFormatters(config);
+
+            ConfigureOAuth(app);
             app.UseCors(CorsOptions.AllowAll);
             app.UseWebApi(config);
         }
 
-        public void ConfigureOAuth(IAppBuilder app)
+        private void ConfigureRoutes(HttpConfiguration config)
+        {
+            config.MapHttpAttributeRoutes();
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+        }
+
+        private void ConfigureFormatters(HttpConfiguration config)
+        {
+            var jsonFormatter = config.Formatters.JsonFormatter;
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+        }
+
+        private void ConfigureOAuth(IAppBuilder app)
         {
             var config = new OAuthAuthorizationServerOptions()
             {

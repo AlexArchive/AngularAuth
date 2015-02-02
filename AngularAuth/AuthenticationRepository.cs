@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using AngularAuth.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace AngularAuth.Authentication
+namespace AngularAuth
 {
     public class AuthRepository : IDisposable
     {

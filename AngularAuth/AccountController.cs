@@ -1,10 +1,8 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
-using AngularAuth.Authentication;
-using AngularAuth.Models;
 using Microsoft.AspNet.Identity;
 
-namespace AngularAuth.Controllers
+namespace AngularAuth
 {
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController

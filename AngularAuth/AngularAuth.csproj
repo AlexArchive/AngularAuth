@@ -123,15 +123,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Authentication\AuthenticationContext.cs" />
-    <Compile Include="Authentication\AuthenticationRepository.cs" />
-    <Compile Include="Authentication\Authorizer.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AnnouncementsController.cs" />
-    <Compile Include="Models\Announcement.cs" />
-    <Compile Include="Models\AnnouncementFactory.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="AuthenticationContext.cs" />
+    <Compile Include="AuthenticationRepository.cs" />
+    <Compile Include="Authorizer.cs" />
+    <Compile Include="AccountController.cs" />
+    <Compile Include="AnnouncementsController.cs" />
+    <Compile Include="Announcement.cs" />
+    <Compile Include="AnnouncementFactory.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -144,9 +143,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

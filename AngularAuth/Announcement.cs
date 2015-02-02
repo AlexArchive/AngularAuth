@@ -1,4 +1,4 @@
-﻿namespace AngularAuth.Modelsp
+﻿namespace AngularAuth
 {
     public class Announcement
     {
