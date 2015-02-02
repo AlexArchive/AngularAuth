@@ -1,0 +1,1 @@
+This repository is a general space for me to experiment with token-based authentication and Angular.
