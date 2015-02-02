@@ -1,9 +1,31 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!doctype html>
+<html lang="en" ng-app="AngularAuth">
 <head>
-    <title></title>
+    <meta charset="utf-8">
+    <title>AngularAuth</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Test</h1>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">AngularAuth</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/ByteBlast/AngularAuth">Source</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div ng-view></div>
+    </div>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.1.5/angular-local-storage.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/homeController.js"></script>
 </body>
 </html>
