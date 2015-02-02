@@ -20,6 +20,7 @@ app.factory('authService', function ($http, $q, localStorageService) {
             }
         };
         $http.post(serviceBase + 'token', data, config).success(function (response) {
+            localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
             deferred.resolve(response);
         }).error(function (error) {
             deferred.reject(error);

@@ -14,5 +14,13 @@ app.config(function ($routeProvider) {
         controller: "loginController",
         templateUrl: "/app/views/login.html"
     });
+    $routeProvider.when("/announcements", {
+        controller: "announcementsController",
+        templateUrl: "/app/views/announcements.html"
+    });
     $routeProvider.otherwise({ redirectTo: "/home" });
+});
+
+app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptorService');
 });
