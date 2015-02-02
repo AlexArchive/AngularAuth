@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('signupController', function ($scope, authService) {
+app.controller('signupController', function ($scope, $location, authService) {
     $scope.message = "";
     $scope.registration = {
         userName: "",
@@ -9,6 +9,7 @@ app.controller('signupController', function ($scope, authService) {
     $scope.signUp = function () {
         authService.saveRegistration($scope.registration).then(function() {
             $scope.message = 'User has been registered successfully.';
+            $location.path("/login");
         },
         function (response) {
             var errors = [];
