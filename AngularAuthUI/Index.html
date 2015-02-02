@@ -9,6 +9,9 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="indexController">
         <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">Home</a>
+            </div>
             <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
                 <ul class="nav navbar-nav navbar-right">
                     <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
