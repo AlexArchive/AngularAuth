@@ -42,9 +42,18 @@ app.factory('authService', function ($http, $q, localStorageService) {
         }
 
     };
+    
+    var logOut = function () {
+
+        localStorageService.remove('authorizationData');
+
+        authentication.isAuth = false;
+        authentication.userName = "";
+    };
 
     authServiceFactory.saveRegistration = saveRegistration;
     authServiceFactory.login = login;
+    authServiceFactory.logOut = logOut;
     authServiceFactory.fillAuthData = fillAuthData;
     authServiceFactory.authentication = authentication;
 
