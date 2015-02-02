@@ -57,8 +57,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\controllers\loginController.js" />
     <Content Include="app\controllers\signupController.js" />
     <Content Include="app\services\authService.js" />
+    <Content Include="app\views\login.html" />
     <Content Include="app\views\signup.html" />
     <Content Include="content\fonts\fontawesome-webfont.eot" />
     <Content Include="content\fonts\fontawesome-webfont.ttf" />
