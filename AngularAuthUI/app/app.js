@@ -6,6 +6,9 @@ app.config(function ($routeProvider) {
         controller: "homeController",
         templateUrl: "/app/views/home.html"
     });
-
+    $routeProvider.when("/signup", {
+        controller: "signupController",
+        templateUrl: "/app/views/signup.html"
+    });
     $routeProvider.otherwise({ redirectTo: "/home" });
 });
